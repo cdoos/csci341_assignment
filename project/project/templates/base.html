@@ -1,0 +1,49 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Crud App</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <a class="navbar-brand" href="/diseasetype">DiseaseType</a>
+          <a class="navbar-brand" href="/country">Country</a>
+          <a class="navbar-brand" href="/disease">Disease</a>
+          <a class="navbar-brand" href="/discover">Discover</a>
+          <a class="navbar-brand" href="/users">Users</a>
+          <a class="navbar-brand" href="/publicservant">PublicServant</a>
+          <a class="navbar-brand" href="/doctor">Doctor</a>
+          <a class="navbar-brand" href="/specialize">Specialize</a>
+          <a class="navbar-brand" href="/record">Record</a>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="btn btn-outline-info btn-md" href="{% url model_name|add:'_new' %}">+ New {{ model_name }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" id="app">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
